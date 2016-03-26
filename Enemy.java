@@ -31,6 +31,8 @@ public class Enemy {
 	// BOSSES:
 	int Petilli_ID = damages.length;
 	int Pete_Fleck_ID = damages.length - 1;
+	
+	//I see dat
 
 	public void attack(String name, int id) {
 		main.writeString(name + "attacks you! Deals " + damages[id] + " damage!");
