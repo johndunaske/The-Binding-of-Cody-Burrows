@@ -7,6 +7,7 @@ public class TextParsing {
 	Player player = new Player();
 	Items itemsClass = new Items();
 	MainClass main = new MainClass();
+	Enemy enemies = new Enemy();
 
 	public TextParsing() {
 
@@ -34,14 +35,8 @@ public class TextParsing {
 			}
 
 		} else if (line.startsWith(verbs[2])) {
-			if (line.endsWith("Medikit") || line.endsWith("Sword") || line.endsWith("Butta knife") || line.endsWith("Rope") || line.endsWith("Milk")) {
-				Movement.map[Movement.y][Movement.x][1][0] = "";
-				String[] itemArray = line.split("take ", line.length());
-				player.addItem(itemArray[1]);
-				main.writeString("You picked up: " + itemArray[1]);
-			} else {
-				main.writeString("That item isn't here!");
-			}
+			String enemy1 = "";
+			for (String s : enemies.)
 		} else if (line.startsWith(verbs[3])) {
 			GameGUI.getGameText().append("\nYour inventory: " + player.getInventory());
 		} else if (line.startsWith(verbs[4])) {
