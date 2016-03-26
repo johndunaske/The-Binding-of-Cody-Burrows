@@ -35,65 +35,49 @@ public class Player {
 
 	public void playerAttack(String weapon) {
 		if (Movement.map[Movement.y][Movement.x][0][0] != null) {
-			if (weapon == "Butta knife" && Movement.map[Movement.y][Movement.x][0][0] == "M@ Klein") {
-				if (Enemy.matt_Health - items.weaponDamage[0] <= 0) {
-					Enemy.matt_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Butta knife" && Movement.map[Movement.y][Movement.x][0][0] == "N8 Baker") {
-				if (Enemy.n8_Health - items.weaponDamage[0] <= 0) {
-					Enemy.n8_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Butta knife" && Movement.map[Movement.y][Movement.x][0][0] == "AlekTheSoccerKid") {
-				if (Enemy.alek_Health - items.weaponDamage[0] <= 0) {
-					Enemy.alek_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Butta knife" && Movement.map[Movement.y][Movement.x][0][0] == "Cody Burrows") {
-				if (Enemy.cody_Health - items.weaponDamage[0] <= 0) {
-					Enemy.cody_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Butta knife" && Movement.map[Movement.y][Movement.x][0][0] == "Gene Petilli") {
-				if (Enemy.petilli_Health - items.weaponDamage[0] <= 0) {
-					Enemy.petilli_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Butta knife" && Movement.map[Movement.y][Movement.x][0][0] == "Pete Fleck") {
-				if (Enemy.fleck_Health - items.weaponDamage[0] <= 0) {
-					Enemy.fleck_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Sword" && Movement.map[Movement.y][Movement.x][0][0] == "M@ Klein") {
-				if (Enemy.matt_Health - items.weaponDamage[0] <= 0) {
-					Enemy.matt_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Sword" && Movement.map[Movement.y][Movement.x][0][0] == "N8 Baker") {
-				if (Enemy.n8_Health - items.weaponDamage[0] <= 0) {
-					Enemy.n8_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Sword" && Movement.map[Movement.y][Movement.x][0][0] == "AlekTheSoccerKid") {
-				if (Enemy.alek_Health - items.weaponDamage[0] <= 0) {
-					Enemy.alek_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Sword" && Movement.map[Movement.y][Movement.x][0][0] == "Cody Burrows") {
-				if (Enemy.cody_Health - items.weaponDamage[0] <= 0) {
-					Enemy.cody_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Sword" && Movement.map[Movement.y][Movement.x][0][0] == "Gene Petilli") {
-				if (Enemy.petilli_Health - items.weaponDamage[0] <= 0) {
-					Enemy.petilli_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
-				}
-			} else if (weapon == "Sword" && Movement.map[Movement.y][Movement.x][0][0] == "Pete Fleck") {
-				if (Enemy.fleck_Health - items.weaponDamage[0] <= 0) {
-					Enemy.fleck_Health = 0;
-					Movement.map[Movement.y][Movement.x][0][0] = null;
+			if (weapon == "Butta knife") {
+				if (Movement.map[Movement.y][Movement.x][0][0] == "M@ Klein") {
+					if (Enemy.healths[Enemy.matt_Klein_ID] - items.weaponDamage[0] <= 0) {
+						Movement.map[Movement.y][Movement.x][0][0] = null;
+						Enemy.healths[Enemy.matt_Klein_ID] = Enemy.matt_BaseHeath;
+					} else {
+						Enemy.healths[Enemy.matt_Klein_ID] -= items.weaponDamage[0];
+					}
+				} else if (Movement.map[Movement.y][Movement.x][0][0] == "Cody Burrows") {
+					if (Enemy.healths[Enemy.cody_Burrows_ID] - items.weaponDamage[0] <= 0) {
+						Movement.map[Movement.y][Movement.x][0][0] = null;
+						Enemy.healths[Enemy.cody_Burrows_ID] = Enemy.cody_BaseHeath;
+					} else {
+						Enemy.healths[Enemy.cody_Burrows_ID] -= items.weaponDamage[0];
+					}
+				} else if (Movement.map[Movement.y][Movement.x][0][0] == "N8 Baker") {
+					if (Enemy.healths[Enemy.n8_Baker_ID] - items.weaponDamage[0] <= 0) {
+						Movement.map[Movement.y][Movement.x][0][0] = null;
+						Enemy.healths[Enemy.n8_Baker_ID] = Enemy.n8_BaseHeath;
+					} else {
+						Enemy.healths[Enemy.n8_Baker_ID] -= items.weaponDamage[0];
+					}
+				} else if (Movement.map[Movement.y][Movement.x][0][0] == "AlekTheSoccerKid") {
+					if (Enemy.healths[Enemy.alek_soccer_ID] - items.weaponDamage[0] <= 0) {
+						Movement.map[Movement.y][Movement.x][0][0] = null;
+						Enemy.healths[Enemy.alek_soccer_ID] = Enemy.alek_BaseHeath;
+					} else {
+						Enemy.healths[Enemy.alek_soccer_ID] -= items.weaponDamage[0];
+					}
+				} else if (Movement.map[Movement.y][Movement.x][0][0] == "Gene Petilli") {
+					if (Enemy.healths[Enemy.Petilli_ID] - items.weaponDamage[0] <= 0) {
+						Movement.map[Movement.y][Movement.x][0][0] = null;
+						Enemy.healths[Enemy.Petilli_ID] = Enemy.petilli_BaseHeath;
+					} else {
+						Enemy.healths[Enemy.Petilli_ID] -= items.weaponDamage[0];
+					}
+				} else if (Movement.map[Movement.y][Movement.x][0][0] == "Pete Fleck") {
+					if (Enemy.healths[Enemy.Pete_Fleck_ID] - items.weaponDamage[0] <= 0) {
+						Movement.map[Movement.y][Movement.x][0][0] = null;
+						Enemy.healths[Enemy.Pete_Fleck_ID] = Enemy.fleck_BaseHeath;
+					} else {
+						Enemy.healths[Enemy.Pete_Fleck_ID] -= items.weaponDamage[0];
+					}
 				}
 			}
 		}

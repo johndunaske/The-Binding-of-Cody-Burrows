@@ -4,13 +4,14 @@ public class Enemy {
 	MainClass main = new MainClass();
 	Player plr = new Player();
 
-	int[] damages = { 3, 5, 6, 0, 10, 15 };
+	static int[] damages = { 3, 5, 6, 0, 10, 15 };
+	static int[] healths = {10,15,17,24,30,40};
 
 	// ENEMIES
-	int matt_Klein_ID = 0;
-	int n8_Baker_ID = 1;
-	int alek_soccer_ID = 2;
-	int cody_Burrows_ID = 3;
+	static int matt_Klein_ID = 0;
+	static int n8_Baker_ID = 1;
+	static int alek_soccer_ID = 2;
+	static int cody_Burrows_ID = 3;
 
 	// BASE HEALTHS
 	static int matt_BaseHeath = 10;
@@ -20,19 +21,10 @@ public class Enemy {
 	static int fleck_BaseHeath = 30;
 	static int petilli_BaseHeath = 40;
 
-	// ACTUAL HEALTHS
-	static int matt_Health = 10;
-	static int n8_Health = 15;
-	static int alek_Health = 17;
-	static int cody_Health = 24;
-	static int fleck_Health = 30;
-	static int petilli_Health = 40;
 
 	// BOSSES:
-	int Petilli_ID = damages.length;
-	int Pete_Fleck_ID = damages.length - 1;
-	
-	//I see dat
+	static int Petilli_ID = damages.length;
+	static int Pete_Fleck_ID = damages.length - 1;
 
 	public void attack(String name, int id) {
 		main.writeString(name + "attacks you! Deals " + damages[id] + " damage!");
