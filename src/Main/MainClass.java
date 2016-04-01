@@ -38,7 +38,7 @@ public class MainClass {
 
 	}
 
-	public void writeString(String sentence) {
+	public static void writeString(String sentence) {
 		game.getGameText().append("\n" + sentence);
 	}
 

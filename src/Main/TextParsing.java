@@ -7,7 +7,6 @@ public class TextParsing {
 	Player player = new Player();
 	Items itemsClass = new Items();
 	MainClass main = new MainClass();
-	Enemy enemies = new Enemy();
 
 	public TextParsing() {
 
@@ -27,16 +26,24 @@ public class TextParsing {
 		} else if (line.startsWith(verbs[1])) {
 			for (String s : directions) {
 				if (line.endsWith(s)) {
+					if (Movement.wrongWay == false){
 					Movement.updateMovement(s);
 					String gitTexted = "\nYou move to a room. It is " + Movement.map[Movement.y][Movement.x][2][0];
 					GameGUI.getGameText().append(gitTexted);
+					} else {
+						MainClass.writeString("You can't go that way!");
+					}
 
 				}
 			}
 
 		} else if (line.startsWith(verbs[2])) {
 			String enemy1 = "";
-			for (String s : enemies.)
+			for (String s : itemsClass.weaponList) {
+				if (line.endsWith(s)) {
+					player.playerAttack(s);
+				}
+			}
 		} else if (line.startsWith(verbs[3])) {
 			GameGUI.getGameText().append("\nYour inventory: " + player.getInventory());
 		} else if (line.startsWith(verbs[4])) {

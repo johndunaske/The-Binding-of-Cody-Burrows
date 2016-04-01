@@ -1,11 +1,13 @@
 package Main;
 
 public class Enemy {
-	MainClass main = new MainClass();
-	Player plr = new Player();
+	static Player plr = new Player();
+	
+	static boolean hostile = true;
 
 	static int[] damages = { 3, 5, 6, 0, 10, 15 };
 	static int[] healths = {10,15,17,24,30,40};
+	static String[] names = {"M@ Klein", "N8 Baker", "AlekTheSoccerKid", "Cody Burrows", "Pete Fleck", "Gene Petilli"};
 
 	// ENEMIES
 	static int matt_Klein_ID = 0;
@@ -26,11 +28,11 @@ public class Enemy {
 	static int Petilli_ID = damages.length;
 	static int Pete_Fleck_ID = damages.length - 1;
 
-	public void attack(String name, int id) {
-		main.writeString(name + "attacks you! Deals " + damages[id] + " damage!");
+	public static void attack(String name, int id) {
+		MainClass.writeString(name + "attacks you! Deals " + damages[id] + " damage!");
 		if (plr.getHealth() - damages[id] <= 0) {
 			plr.setHealth(0);
-			main.writeString("You died... Petilli wins");
+			MainClass.writeString("You died... Petilli wins");
 		} else {
 			plr.setHealth(plr.getHealth() - damages[id]);
 		}
