@@ -1,2 +1,2 @@
 # The-Binding-of-Cody-Burrows
-Its a text based game about petilli..... Unless your on robotics you won't understand lol
+It's a text based game about Gene....
